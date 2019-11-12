@@ -1,0 +1,18 @@
+select * from empleado where APE_PAT = 'SEGOVIA' AND APE_MAT = 'GAMBOA';
+SELECT * FROM USUARIOS WHERE FICHA = 338689
+
+SELECT * FROM empleado WHERE FICHA = 100871  -- id_area = 376
+
+select * from actividades where codigo ='PE-TH-OP-0193-2010'
+select * from calidad where id_actividades = 40767
+
+select * from calidad where id_actividades in (select id_actividades from actividades where id_area =376)
+
+
+select * from calidad where id_actividades in (select id_actividades from actividades where codigo  = 'PE-PO-OP-2382-2010')
+
+
+update calidad set impreso = 0 where  id_actividades in (select id_actividades from actividades where codigo  = 'PE-PO-OP-2382-2010')
+
+
+update actividades set desc_actividades = 'RECIBO DE DISPOSITIVOS PREVIOS E INSTRUMENTADOS DE LA LINEA DE 48 EL MISTERIO-CCC PALOMAS.'     where codigo = 'PE-TH-OP-0193-2010' and id_actividades = 15191

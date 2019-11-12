@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="FECHA">
+      <DataType>String</DataType>
+      <Prompt>FECHA</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ACTIVO">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ACTIVO</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>CANTARELL,EK BALAM,KU MALOOB ZAAP,GTDH,RMNE</Value>
+            <Label>RMNE</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>CANTARELL,EK BALAM</Value>
+            <Label>CANTARELL</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>KU MALOOB ZAAP</Value>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="OBSERVACIONES">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>OBSERVACIONES</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Mostrar</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>0</Value>
+            <Label>Ocultar</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image2">
+        <Sizing>Fit</Sizing>
+        <Top>0.25cm</Top>
+        <Width>3.24206cm</Width>
+        <MIMEType />
+        <Source>External</Source>
+        <Style />
+        <ZIndex>2</ZIndex>
+        <Left>0.5cm</Left>
+        <Height>1.49074cm</Height>
+        <Value>pemex.gif</Value>
+      </Image>
+      <Image Name="image3">
+        <Sizing>Fit</Sizing>
+        <Top>1.75cm</Top>
+        <Width>25cm</Width>
+        <MIMEType />
+        <Source>External</Source>
+        <Style />
+        <ZIndex>1</ZIndex>
+        <Left>0.5cm</Left>
+        <Value>barra_med.gif</Value>
+      </Image>
+      <Image Name="image1">
+        <Sizing>Fit</Sizing>
+        <MIMEType />
+        <Source>External</Source>
+        <Style />
+        <Height>0.25cm</Height>
+        <Value>barra_sup.gif</Value>
+      </Image>
+    </ReportItems>
+    <Height>2cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.5cm</BottomMargin>
+  <rd:ReportID>a1ff5101-0dd8-424f-97b0-662333a15fe5</rd:ReportID>
+  <PageWidth>28cm</PageWidth>
+  <Code>Public Function Nulo(ByVal nValor As Object) As Double
+   If nValor &lt;&gt; Nothing Then
+      Return nValor
+   Else
+      Return 0
+   End If
+End Function
+
+
+Public Function fFinSem(sValor As string) As String
+
+ Dim fecha As Date = Cdate(sValor)
+
+ fecha = fecha.AddDays( 1 - fDiaSemana( fecha ))
+
+ return Format(fecha, "MMMM")
+
+End Function
+
+
+Public Function fDiaSemana(dFecha As Date) As Integer
+ Dim nDia = WeekDay( dFecha )
+ 
+ If nDia = 1 Then
+  return 7
+ Else
+  return nDia - 1
+ End If
+End Function
+
+</Code>
+  <Width>26cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox6">
+        <rd:DefaultName>textbox6</rd:DefaultName>
+        <Top>2cm</Top>
+        <Width>12cm</Width>
+        <Style>
+          <Color>DarkBlue</Color>
+          <FontSize>26pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>7cm</Left>
+        <Height>1.25cm</Height>
+        <Value>En Construcción...</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>18.5cm</Height>
+  </Body>
+  <Language>es-MX</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image4">
+        <Sizing>Fit</Sizing>
+        <MIMEType />
+        <Source>External</Source>
+        <Style />
+        <Value>barra_inf.gif</Value>
+      </Image>
+    </ReportItems>
+    <Height>0.5cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.5cm</TopMargin>
+  <PageHeight>21cm</PageHeight>
+</Report>

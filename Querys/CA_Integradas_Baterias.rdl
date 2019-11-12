@@ -1,0 +1,2015 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="ACEITENE">
+      <rd:DataSourceID>545f3d99-8907-4ba4-b42a-60f26d7aba79</rd:DataSourceID>
+      <DataSourceReference>ACEITENE</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="Fecha">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Date.Now.Date</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Fecha Inicio (dd/mm/yyyy):</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FECHA_FIN">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Date.Now.Date</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Fecha Fin (dd/mm/yyyy):</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DESC_HORA">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>="05:00"</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Hora (hh:mi):</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>05:00</Value>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>17:00</Value>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.1cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.9cm</RightMargin>
+  <LeftMargin>1cm</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image3">
+        <Sizing>Fit</Sizing>
+        <Width>2.5cm</Width>
+        <Source>External</Source>
+        <Style />
+        <ZIndex>3</ZIndex>
+        <Left>23.2cm</Left>
+        <Height>2cm</Height>
+        <Value>picCantarell.bmp</Value>
+      </Image>
+      <Textbox Name="textbox53">
+        <Top>2.4cm</Top>
+        <Width>8.3cm</Width>
+        <Style>
+          <FontSize>7pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Left>0.2cm</Left>
+        <Height>0.35cm</Height>
+        <Value>="Del  " &amp;  Format(CDate(Parameters!Fecha.Value), "dd/MMM/yyyy") &amp; "  al  " &amp; Format(CDate( Parameters!FECHA_FIN.Value), "dd/MMM/yyyy") &amp; "   " &amp; Parameters!DESC_HORA.Value &amp; " Hrs."</Value>
+      </Textbox>
+      <Rectangle Name="rectangle4">
+        <Left>8.05cm</Left>
+        <ZIndex>1</ZIndex>
+        <ReportItems>
+          <Textbox Name="textbox12">
+            <Top>1.05cm</Top>
+            <Style>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <VerticalAlign>Middle</VerticalAlign>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <Height>0.3cm</Height>
+            <Value>OPERACIÓN DE INSTALACIONES DE ACEITE</Value>
+          </Textbox>
+          <Textbox Name="textbox48">
+            <Top>1.5cm</Top>
+            <Style>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Center</TextAlign>
+              <VerticalAlign>Middle</VerticalAlign>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <Height>0.4cm</Height>
+            <Value>PRODUCCIÓN DE ACEITE</Value>
+          </Textbox>
+          <Textbox Name="textbox47">
+            <Top>0.7cm</Top>
+            <Style>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <VerticalAlign>Middle</VerticalAlign>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <Height>0.35cm</Height>
+            <Value>COORDINACIÓN DE OPERACIÓN DE POZOS E INSTALACIONES</Value>
+          </Textbox>
+          <Textbox Name="textbox46">
+            <Top>0.35cm</Top>
+            <Style>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <VerticalAlign>Middle</VerticalAlign>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <Height>0.3cm</Height>
+            <Value>ACTIVO INTEGRAL CANTARELL</Value>
+          </Textbox>
+          <Textbox Name="textbox45">
+            <rd:DefaultName>textbox45</rd:DefaultName>
+            <Style>
+              <FontSize>7pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <VerticalAlign>Middle</VerticalAlign>
+            </Style>
+            <Height>0.3cm</Height>
+            <Value>PEMEX EXPLORACIÓN Y PRODUCCIÓN</Value>
+          </Textbox>
+        </ReportItems>
+        <Width>10cm</Width>
+        <Height>2cm</Height>
+      </Rectangle>
+      <Image Name="image1">
+        <Sizing>FitProportional</Sizing>
+        <Width>3.8cm</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <Height>1.8cm</Height>
+        <Value>logo_pemex</Value>
+      </Image>
+    </ReportItems>
+    <Height>2.8cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.5cm</BottomMargin>
+  <rd:ReportID>16e0e5ff-bb8d-421a-9f97-be4b74fe3d54</rd:ReportID>
+  <EmbeddedImages>
+    <EmbeddedImage Name="plataforma">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="logo_pemex">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <PageWidth>27.94cm</PageWidth>
+  <DataSets>
+    <DataSet Name="INTEGRADAS">
+      <Fields>
+        <Field Name="FECHA">
+          <DataField>FECHA</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_C1">
+          <DataField>AKAL_C1</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_C2">
+          <DataField>AKAL_C2</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_C3">
+          <DataField>AKAL_C3</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_CPER">
+          <DataField>AKAL_CPER</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="NOHOCH_A1">
+          <DataField>NOHOCH_A1</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="NOHOCH_A2">
+          <DataField>NOHOCH_A2</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_B1">
+          <DataField>AKAL_B1</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_J1">
+          <DataField>AKAL_J1</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_J2">
+          <DataField>AKAL_J2</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_J3">
+          <DataField>AKAL_J3</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_J_KUH">
+          <DataField>AKAL_J_KUH</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_N">
+          <DataField>AKAL_N</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_L">
+          <DataField>AKAL_L</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AKAL_L1">
+          <DataField>AKAL_L1</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="BN_ANILLO">
+          <DataField>BN_ANILLO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="BN_LUNA">
+          <DataField>BN_LUNA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="VOL_BN">
+          <DataField>VOL_BN</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="REP_CANTARELL">
+          <DataField>REP_CANTARELL</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="SUMA_AKC">
+          <Value>=CDbl(Fields!AKAL_C1.Value) + CDbl(Fields!AKAL_C2.Value) + CDbl(Fields!AKAL_C3.Value)</Value>
+        </Field>
+        <Field Name="SUMA_NOHOCH">
+          <Value>= Cdbl(Fields!NOHOCH_A1.Value) + CDbl(Fields!NOHOCH_A2.Value)</Value>
+        </Field>
+        <Field Name="SUMA_AKJ">
+          <Value>= CDbl(Fields!AKAL_J1.Value) + CDbl(Fields!AKAL_J2.Value) + CDbl(Fields!AKAL_J3.Value)</Value>
+        </Field>
+        <Field Name="SUMA_AKL">
+          <Value>=CDbl(Fields!AKAL_L.Value) + CDbl(Fields!AKAL_L1.Value)</Value>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>ACEITENE</DataSourceName>
+        <CommandText>SELECT
+   hr.FECHA, 
+   ROUND(MNE_ACE_PROD_INTEG_CA(640, to_char(hr.FECHA + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_C1, 
+   ROUND(MNE_ACE_PROD_INTEG_CA(641, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_C2,
+   ROUND(MNE_ACE_PROD_INTEG_CA(642, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_C3,
+   ROUND(MNE_ACE_PROD_INTEG_CA(643, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_CPer,
+   ROUND(MNE_ACE_PROD_INTEG_CA(651, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As NOHOCH_A1,
+   ROUND(MNE_ACE_PROD_INTEG_CA(652, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As NOHOCH_A2,
+   ROUND(MNE_ACE_PROD_INTEG_CA(638, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_B1,
+   ROUND(MNE_ACE_PROD_INTEG_CA(644, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_J1,
+   ROUND(MNE_ACE_PROD_INTEG_CA(645, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_J2,
+   ROUND(MNE_ACE_PROD_INTEG_CA(646, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_J3,
+   ROUND(
+          MNE_ACE_PROD_INTEG_OTRO_CA(644, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora)
+          + MNE_ACE_PROD_INTEG_OTRO_CA(645, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora)
+          + MNE_ACE_PROD_INTEG_OTRO_CA(646, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora) )
+   As AKAL_J_KUH,
+   ROUND(MNE_ACE_PROD_INTEG_CA(649, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_N,
+   ROUND(MNE_ACE_PROD_INTEG_CA(647, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_L,
+   ROUND(MNE_ACE_PROD_INTEG_CA(648, to_char(hr.fecha + 1,'dd/mm/yyyy'), hr.id_hora,'P','S')) As AKAL_L1,
+   O.BN_ANILLO,
+   P.BN_LUNA,
+   R.Vol_BN,
+   MNE_ACE_VALOR_NUM(1968, TO_CHAR(hr.FECHA+1, 'DD/MM/YYYY'), hr.id_hora, 621, '') As REP_CANTARELL
+
+FROM
+---------------- DIAS Y HORAS -------------
+(
+SELECT gpv.fecha_contable AS FECHA, gpv.id_hora
+FROM gas_parametros_valores gpv, gas_plataformas gp, gas_c_horas gch
+WHERE gpv.id_parametros = 758
+   AND gpv.plataforma = gp.id + 0
+   AND gp.tipo_inst = 'INSTANTANEA' AND gp.activo = 'CANTARELL'
+   AND (gpv.fecha_contable BETWEEN TO_DATE(:FECHA,'DD/MM/YYYY') And TO_DATE(:FECHA_FIN,'DD/MM/YYYY') )
+   AND gpv.id_hora = gch.id_hora + 0
+   AND gch.hora_desc = :DESC_HORA
+GROUP By gpv.fecha_contable, gpv.id_hora
+) hr,
+---------------- BN_ANILLO -----------------
+(
+SELECT gpv.fecha_contable AS FECHA, ROUND(AVG(gpv.valor_numerico),4) BN_ANILLO
+FROM gas_parametros_valores gpv, gas_plataformas gp, gas_c_horas gch
+WHERE gpv.id_parametros=759
+   AND gpv.plataforma = gp.id
+   AND gp.tipo_inst = 'INSTANTANEA' AND gp.activo = 'CANTARELL'
+   AND gpv.plataforma = 651
+   AND (gpv.fecha_contable BETWEEN TO_DATE(:FECHA,'DD/MM/YYYY') And TO_DATE(:FECHA_FIN,'DD/MM/YYYY') )
+   AND gpv.id_hora = gch.id_hora
+GROUP BY gpv.fecha_contable )O,
+------------- BN_LUNA ---------------
+(
+SELECT gpv.fecha_contable AS FECHA, ROUND(AVG(gpv.valor_numerico),4) BN_LUNA
+FROM gas_parametros_valores gpv, gas_plataformas gp, gas_c_horas gch
+WHERE gpv.id_parametros = 759
+   AND gpv.plataforma = gp.id
+   AND gp.tipo_inst = 'INSTANTANEA' AND gp.activo = 'CANTARELL'
+   AND gpv.plataforma = 652
+   AND (gpv.fecha_contable BETWEEN TO_DATE(:FECHA,'DD/MM/YYYY') And TO_DATE(:FECHA_FIN,'DD/MM/YYYY') )
+   AND gpv.id_hora = gch.id_hora
+GROUP BY gpv.fecha_contable )p,
+------------- Vol_BN---------------
+(
+SELECT G.FECHA,
+   ROUND(AVG(CASE WHEN G.GAS&lt;&gt;0  THEN G.GAS + N.N2  ELSE 0 END),4) VOL_BN
+FROM
+   (SELECT gpv.fecha_contable FECHA,gch.id_hora, gch.hora_desc, gpv.valor_numerico AS GAS
+    FROM gas_parametros_valores gpv, gas_c_horas gch, gas_plataformas gp
+    WHERE gpv.id_parametros = 2207
+       AND gpv.plataforma = gp.id
+       AND gp.id = 252
+       AND gpv.fecha_contable BETWEEN TO_DATE(:FECHA,'DD/MM/YYYY') And TO_DATE(:FECHA_FIN,'DD/MM/YYYY')
+       AND gpv.id_hora = gch.id_hora ) G,
+   (SELECT gpv.fecha_contable FECHA,gch.id_hora, gch.hora_desc, gpv.valor_numerico AS N2
+    FROM gas_parametros_valores gpv, gas_c_horas gch, gas_plataformas gp
+    WHERE gpv.id_parametros = 2208
+       AND gpv.plataforma = gp.id
+       AND gp.id = 252
+       AND gpv.fecha_contable BETWEEN TO_DATE(:FECHA,'DD/MM/YYYY') And TO_DATE(:FECHA_FIN,'DD/MM/YYYY')
+       AND gpv.id_hora = gch.id_hora ) N
+WHERE G.FECHA = N.FECHA (+)
+GROUP BY G.FECHA
+ORDER BY 1,2 )r
+
+WHERE HR.FECHA = O.FECHA (+)
+AND HR.FECHA = P.FECHA (+)
+AND HR.FECHA = R.FECHA (+)
+order by fecha</CommandText>
+        <QueryParameters>
+          <QueryParameter Name=":FECHA">
+            <Value>=Format( CDate(Parameters!Fecha.Value), "dd/MM/yyyy")</Value>
+          </QueryParameter>
+          <QueryParameter Name=":FECHA_FIN">
+            <Value>=Format( CDate(Parameters!FECHA_FIN.Value), "dd/MM/yyyy")</Value>
+          </QueryParameter>
+          <QueryParameter Name=":DESC_HORA">
+            <Value>=Parameters!DESC_HORA.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code>Public nAcumCA As Double = 0
+Public nContCA As Double = 0
+
+Public Function AcumCantarell(nValor As Object)
+   
+   If nValor &lt;&gt; Nothing Then
+      nAcumCA = nAcumCA + nValor
+      nContCA = nContCA + 1
+   End If
+
+   Return nValor
+End Function</Code>
+  <Width>25.9cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Rectangle Name="rectangle10">
+        <ReportItems>
+          <Table Name="table9">
+            <DataSetName>INTEGRADAS</DataSetName>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox74">
+                          <Style>
+                            <Color>Blue</Color>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>dd/MM/yyyy</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>21</ZIndex>
+                          <Value>= Fields!FECHA.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox75">
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>20</ZIndex>
+                          <Value>= Fields!AKAL_C1.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox76">
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>19</ZIndex>
+                          <Value>= Fields!AKAL_C2.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox77">
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>18</ZIndex>
+                          <Value>= Fields!AKAL_C3.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox123">
+                          <rd:DefaultName>textbox123</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>17</ZIndex>
+                          <Value>=Fields!SUMA_AKC.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox85">
+                          <rd:DefaultName>textbox85</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>16</ZIndex>
+                          <Value>=Fields!NOHOCH_A1.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox88">
+                          <rd:DefaultName>textbox88</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>15</ZIndex>
+                          <Value>=Fields!NOHOCH_A2.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox91">
+                          <rd:DefaultName>textbox91</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>14</ZIndex>
+                          <Value>=Fields!SUMA_NOHOCH.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox94">
+                          <rd:DefaultName>textbox94</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>13</ZIndex>
+                          <Value>=Fields!AKAL_B1.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox97">
+                          <rd:DefaultName>textbox97</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>12</ZIndex>
+                          <Value>=Fields!AKAL_J1.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox100">
+                          <rd:DefaultName>textbox100</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>11</ZIndex>
+                          <Value>=Fields!AKAL_J2.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox103">
+                          <rd:DefaultName>textbox103</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>10</ZIndex>
+                          <Value>=Fields!AKAL_J3.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox106">
+                          <rd:DefaultName>textbox106</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>9</ZIndex>
+                          <Value>=Fields!AKAL_J_KUH.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox109">
+                          <rd:DefaultName>textbox109</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>8</ZIndex>
+                          <Value>=Fields!SUMA_AKJ.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox112">
+                          <rd:DefaultName>textbox112</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>7</ZIndex>
+                          <Value>=Fields!AKAL_N.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox115">
+                          <rd:DefaultName>textbox115</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>6</ZIndex>
+                          <Value>=Fields!AKAL_L.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox118">
+                          <rd:DefaultName>textbox118</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>5</ZIndex>
+                          <Value>=Fields!AKAL_L1.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox121">
+                          <rd:DefaultName>textbox121</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>4</ZIndex>
+                          <Value>=Fields!SUMA_AKL.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox2">
+                          <rd:DefaultName>textbox2</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N1</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <Value>=Fields!BN_ANILLO.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox8">
+                          <rd:DefaultName>textbox8</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N1</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <Value>=Fields!BN_LUNA.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox5">
+                          <rd:DefaultName>textbox5</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N1</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <Value>=Fields!VOL_BN.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox11">
+                          <rd:DefaultName>textbox11</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <Format>N1</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <Value>=Fields!REP_CANTARELL.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.4cm</Height>
+                </TableRow>
+              </TableRows>
+            </Details>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+              <BorderWidth>
+                <Default>0.5pt</Default>
+              </BorderWidth>
+            </Style>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox65">
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>65</ZIndex>
+                          <Value>FECHA</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox68">
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>64</ZIndex>
+                          <Value>AKAL-C1 </Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox69">
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>63</ZIndex>
+                          <Value>AKAL-C2</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox71">
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>62</ZIndex>
+                          <Value>AKAL-C3</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox73">
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>61</ZIndex>
+                          <Value>SUMA</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox84">
+                          <rd:DefaultName>textbox84</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>60</ZIndex>
+                          <Value>NOHOCH-A1</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox87">
+                          <rd:DefaultName>textbox87</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>59</ZIndex>
+                          <Value>NOHOCH-A2</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox90">
+                          <rd:DefaultName>textbox90</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>58</ZIndex>
+                          <Value>SUMA</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox93">
+                          <rd:DefaultName>textbox93</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>57</ZIndex>
+                          <Value>AKAL-B1</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox96">
+                          <rd:DefaultName>textbox96</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>56</ZIndex>
+                          <Value>AKAL-J1</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox99">
+                          <rd:DefaultName>textbox99</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>55</ZIndex>
+                          <Value>AKAL-J2</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox102">
+                          <rd:DefaultName>textbox102</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>54</ZIndex>
+                          <Value>AKAL-J3</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox105">
+                          <rd:DefaultName>textbox105</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>53</ZIndex>
+                          <Value>AKAL-J   KU-H</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox108">
+                          <rd:DefaultName>textbox108</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>52</ZIndex>
+                          <Value>SUMA</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox111">
+                          <rd:DefaultName>textbox111</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>51</ZIndex>
+                          <Value>AKAL-N</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox114">
+                          <rd:DefaultName>textbox114</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>50</ZIndex>
+                          <Value>AKAL-L</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox117">
+                          <rd:DefaultName>textbox117</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>49</ZIndex>
+                          <Value>AKAL-L1</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox120">
+                          <rd:DefaultName>textbox120</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>48</ZIndex>
+                          <Value>SUMA</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox1">
+                          <rd:DefaultName>textbox1</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>47</ZIndex>
+                          <Value>BN ANILLO</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox7">
+                          <rd:DefaultName>textbox7</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>46</ZIndex>
+                          <Value>BN MLUNA</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox4">
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>45</ZIndex>
+                          <Value>VOL BN</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox10">
+                          <rd:DefaultName>textbox10</rd:DefaultName>
+                          <Style>
+                            <Color>White</Color>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>44</ZIndex>
+                          <Value>REPORTADA CANTARELL</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.7cm</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <TableColumns>
+              <TableColumn>
+                <Width>1.3cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.25cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.25cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.25cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.15cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.25cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.9cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.9cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.8cm</Width>
+              </TableColumn>
+            </TableColumns>
+            <Height>1.6cm</Height>
+            <Footer>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox79">
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>43</ZIndex>
+                          <Value>Promedio:</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox80">
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>42</ZIndex>
+                          <Value>=AVG(Fields!AKAL_C1.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox81">
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>41</ZIndex>
+                          <Value>=AVG(Fields!AKAL_C2.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox82">
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>40</ZIndex>
+                          <Value>=AVG( Fields!AKAL_C3.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox78">
+                          <rd:DefaultName>textbox78</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>39</ZIndex>
+                          <Value>= AVG( Fields!SUMA_AKC.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox86">
+                          <rd:DefaultName>textbox86</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>38</ZIndex>
+                          <Value>=AVG( Fields!NOHOCH_A1.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox89">
+                          <rd:DefaultName>textbox89</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>37</ZIndex>
+                          <Value>= AVG( Fields!NOHOCH_A2.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox92">
+                          <rd:DefaultName>textbox92</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>36</ZIndex>
+                          <Value>=AVG( Fields!SUMA_NOHOCH.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox95">
+                          <rd:DefaultName>textbox95</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>35</ZIndex>
+                          <Value>=AVG( Fields!AKAL_B1.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox98">
+                          <rd:DefaultName>textbox98</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>34</ZIndex>
+                          <Value>=AVG( Fields!AKAL_J1.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox101">
+                          <rd:DefaultName>textbox101</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>33</ZIndex>
+                          <Value>=AVG( Fields!AKAL_J2.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox104">
+                          <rd:DefaultName>textbox104</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>32</ZIndex>
+                          <Value>= AVG( Fields!AKAL_J3.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox107">
+                          <rd:DefaultName>textbox107</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>31</ZIndex>
+                          <Value>= AVG( Fields!AKAL_J_KUH.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox110">
+                          <rd:DefaultName>textbox110</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>30</ZIndex>
+                          <Value>=AVG( Fields!SUMA_AKJ.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox113">
+                          <rd:DefaultName>textbox113</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>29</ZIndex>
+                          <Value>=AVG( Fields!AKAL_N.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox116">
+                          <rd:DefaultName>textbox116</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>28</ZIndex>
+                          <Value>=AVG( Fields!AKAL_L.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox119">
+                          <rd:DefaultName>textbox119</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>27</ZIndex>
+                          <Value>=AVG( Fields!AKAL_L1.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox122">
+                          <rd:DefaultName>textbox122</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N0</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>26</ZIndex>
+                          <Value>=AVG( Fields!SUMA_AKL.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox3">
+                          <rd:DefaultName>textbox3</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N1</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>25</ZIndex>
+                          <Value>=AVG( Fields!BN_ANILLO.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox9">
+                          <rd:DefaultName>textbox9</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N1</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>24</ZIndex>
+                          <Value>=AVG( Fields!BN_LUNA.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox6">
+                          <rd:DefaultName>textbox6</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N1</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>23</ZIndex>
+                          <Value>=AVG( Fields!VOL_BN.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox13">
+                          <rd:DefaultName>textbox13</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <BorderWidth>
+                              <Default>0.5pt</Default>
+                            </BorderWidth>
+                            <FontSize>6pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <Format>N1</Format>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>22</ZIndex>
+                          <Value>=AVG( Fields!REP_CANTARELL.Value )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.5cm</Height>
+                </TableRow>
+              </TableRows>
+            </Footer>
+          </Table>
+        </ReportItems>
+        <Top>0.1cm</Top>
+        <Width>25.85cm</Width>
+        <Height>1.7cm</Height>
+      </Rectangle>
+    </ReportItems>
+    <Height>2cm</Height>
+  </Body>
+  <Language>es-MX</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox63">
+        <Top>0.15449cm</Top>
+        <Width>4cm</Width>
+        <Style>
+          <FontSize>5pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Left>21.575cm</Left>
+        <Height>0.25cm</Height>
+        <Value>="Generado:    " &amp; Format(Globals!ExecutionTime, "dd/MMM/yyyy hh:mm tt")</Value>
+      </Textbox>
+      <Textbox Name="textbox67">
+        <Top>0.18095cm</Top>
+        <Width>4cm</Width>
+        <Style>
+          <FontSize>5pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Left>10.2cm</Left>
+        <Height>0.25cm</Height>
+        <Value>="Página:    " &amp; Globals!PageNumber &amp; "  de  " &amp; Globals!TotalPages</Value>
+      </Textbox>
+      <Image Name="image2">
+        <Sizing>Fit</Sizing>
+        <Top>0.07937cm</Top>
+        <Width>1.5cm</Width>
+        <MIMEType />
+        <Source>External</Source>
+        <Style />
+        <Left>0.55291cm</Left>
+        <Value>logo_promar.jpg</Value>
+      </Image>
+    </ReportItems>
+    <Height>0.52937cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.8cm</TopMargin>
+  <PageHeight>21.59cm</PageHeight>
+</Report>
